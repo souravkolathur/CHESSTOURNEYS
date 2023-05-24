@@ -1,0 +1,184 @@
+/* Global Styles */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f2f2f2;
+}
+
+.header {
+    background-color: #0077B6;
+    padding: 20px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+.header h1 {
+	margin: 0;
+	font-size: 48px;
+	line-height: 1.2;
+}
+
+.header p {
+	margin: 20px 0 0 0;
+	font-size: 24px;
+    line-height: 1.2;
+    color: #fff;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.month-filter {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.month-filter label {
+	font-size: 18px;
+	color: #336699;
+	margin-bottom: 10px;
+}
+
+.month-filter select {
+	padding: 10px;
+	font-size: 18px;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #ccc;
+}
+
+.tournament-list {
+	margin: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.tournament {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #ccc;
+	width: 80%;
+	max-width: 600px;
+	position: relative;
+}
+.tournament a {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	text-decoration: none; /* No underlines on the link */
+	z-index: 10; /* Places the link above everything else in the div */
+	background-color: #FFF; /* Fix to make div clickable in IE */
+	opacity: 0; /* Fix to make div clickable in IE */
+	filter: alpha(opacity=1); /* Fix to make div clickable in IE */
+}
+.tournament-name,
+.tournament-date {
+  margin: 0;
+  text-align: center;
+}
+.tournament::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(to bottom right, #66ccff, #336699);
+	opacity: 0.2;
+	z-index: -1;
+	border-radius: 10px;
+}
+
+.tournament:hover {
+	box-shadow: 0 0 15px #ccc;
+}
+
+.tournament-name {
+	flex-grow: 1;
+	font-size: 24px;
+	font-weight: bold;
+	color: #336699;
+}
+
+.tournament-date {
+	margin-left: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #000;
+}
+
+.calligraphic-font {
+	font-family: 'Kaushan Script', cursive;
+	color: #336699;
+}
+
+/* Typography */
+h2 {
+	font-size: 36px;
+	font-weight: bold;
+	color: #336699;
+	text-align: center;
+	margin-top: 50px;
+}
+
+h3 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #336699;
+	margin-top: 20px;
+}
+
+p {
+	font-size: 18px;
+	line-height: 1.5;
+	color: #555;
+	margin-top: 10px;
+}
+
+/* Buttons */
+.btn {
+	padding: 10px 20px;
+	background-color: #336699;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 18px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.btn:hover {
+	background-color: #254f77;
+}
+
+@media only screen and (max-width: 600px) {
+	.tournament {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	
+	.tournament .tournament-name {
+		flex-basis: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	
+	.tournament .tournament-date {
+		margin-left: 0;
+	}
+}
